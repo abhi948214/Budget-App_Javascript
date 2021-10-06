@@ -1,7 +1,7 @@
 // BUDGET CONTROLLER
-var budgetController = (function() {
+var budgetController = (()=> {
     
-    var Expense = function(id, description, value) {
+    var Expense = (id, description, value) =>{
         this.id = id;
         this.description = description;
         this.value = value;
@@ -452,8 +452,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     
     
     return {
-        init: function() {
-            console.log('Application has started.');
+        init: ()=> {
             UICtrl.displayMonth();
             UICtrl.displayBudget({
                 budget: 0,
@@ -462,6 +461,7 @@ var controller = (function(budgetCtrl, UICtrl) {
                 percentage: -1
             });
             setupEventListeners();
+            
         }
     };
     
